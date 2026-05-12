@@ -48,7 +48,7 @@ function startImageSlider() {
         
         // Hiển thị ảnh mới
         slides[currentIndex].classList.add('active');
-    }, 2500); // 2.5 giây đổi 1 lần
+    }, 3000); // 3 giây đổi 1 lần
 }
 
 // Chạy hàm ngay khi load xong trang
