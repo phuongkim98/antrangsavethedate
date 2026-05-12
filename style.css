@@ -21,7 +21,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('images/5.jpg') center/cover no-repeat fixed;
+    background: url('5.jpg') center/cover no-repeat fixed;
     display: flex; align-items: center; justify-content: center;
     text-align: center; position: relative; color: white;
 }
@@ -94,11 +94,10 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* CHỈ BLUR ẢNH Ở ĐÂY */
-    filter: blur(1px) brightness(0.6); 
+    /* CHỈ BLUR ẢNH Ở ĐÂY */ 
     transform: scale(1.1); /* Phóng to nhẹ để không lộ viền trắng khi blur */
 }
-
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.35); }
 /* CHỮ NẰM TRÊN LỚP RIÊNG - SẮC NÉT 100% */
 .photo-caption {
     position: relative;
