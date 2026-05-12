@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Minimalist Edition</title>
+    <!-- Hiệu ứng cuộn AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Font chữ sang trọng -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+            <p class="top-text">SAVE THE DATE</p>
+            <h1 class="couple-name">Thành An * Thu Trang</h1>
+            <p class="date-text">31 — 05 — 2026</p>
+        </div>
+    </section>
+
+    <!-- EVENTS & COUNTDOWN -->
+    <section class="events-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Thời Gian & Địa Điểm</h2>
+            
+            <div id="countdown" data-aos="fade-up">
+                <div class="time-item"><span id="days">00</span><label>Days</label></div>
+                <div class="time-item"><span id="hours">00</span><label>Hours</label></div>
+                <div class="time-item"><span id="minutes">00</span><label>Mins</label></div>
+                <div class="time-item"><span id="seconds">00</span><label>Secs</label></div>
+            </div>
+
+            <div class="event-grid">
+                <div class="event-box" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Lễ Vu Quy</h3>
+                    <p>12:30 CH | 31.05.2026</p>
+                    <p class="loc">Thôn Khuốc Tây - Đông Tiên Hưng  Hưng Yên</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-link">View Map</a>
+                </div>
+                <div class="event-box" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Tiệc Cưới</h3>
+                    <p>12:30 CH | 31.05.2026</p>
+                    <p class="loc">Thôn Khuốc Tây - Đông Tiên Hưng  Hưng Yên</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-link">View Map</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO STORY SECTION -->
+    <section class="photo-story">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Câu Chuyện Của Chúng Mình</h2>
+            
+            <div class="story-item" data-aos="fade-up">
+                <div class="story-img">
+                    <img src="images/4.jpg" alt="Kỷ niệm 1">
+                </div>
+                <div class="story-text">
+                    <h3>Tình yêu được viết bởi định mệnh</h3>
+                    <p>Như một cách vô thức lần đầu tiên mình nhìn thấy cô ấy. Mình nhận ra đây chính là người con gái mình muốn nắm tay đi đến suốt cuộc đời 💕.</p>
+                </div>
+            </div>
+
+            <div class="story-item reverse" data-aos="fade-up">
+                <div class="story-img">
+                    <img src="images/3.jpg" alt="Kỷ niệm 2">
+                </div>
+                <div class="story-text">
+                    <h3>Cùng nhau đi qua năm tháng</h3>
+                    <p>Có những ngày bình yên, cũng có những ngày giông bão. Nhưng quan trọng nhất là tay vẫn nắm chặt tay, cùng nhau viết nên những trang ký ức đẹp nhất. Vì vậy, điều ý nghĩa nhất với mình chính là lời chấp nhận từ người ấy.</p>
+                </div>
+            </div>
+
+            <!-- Slider ảnh kỷ niệm có chữ đè lên -->
+    <div class="full-width-photo" data-aos="zoom-in">
+        <div class="slider-container">
+            <!-- Bà có thể thêm bao nhiêu ảnh tùy thích vào đây -->
+            <div class="slide active"><img src="images/1.jpg" alt="Photo 1"></div>
+            <div class="slide"><img src="images/6.jpg" alt="Photo 6"></div>
+            <div class="slide"><img src="images/7.jpg" alt="Photo 7"></div>
+            <div class="slide"><img src="images/8.jpg" alt="Photo 8"></div>
+        </div>
+        
+        <!-- Chữ đè lên ảnh - Luôn sắc nét -->
+        <div class="photo-caption">
+            <p>VÀ CUỐI CÙNG CHÚNG MÌNH ĐÃ NÓI "LỜI ĐỒNG Ý"...</p>
+        </div>
+    </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>31.05.2026 — Rất hân hạnh đón tiếp!</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
