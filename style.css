@@ -34,15 +34,33 @@ body {
 .date-text { font-size: 1.3rem; margin-top: 25px; letter-spacing: 4px; font-weight: 200; }
 
 /* Dòng chữ cuộn xuống */
+/* Chặn cuộn trang khi chưa nhấn nút (để nhạc phải phát) */
+body.stop-scrolling {
+    height: 100vh;
+    overflow: hidden;
+}
+
 .scroll-down {
     display: inline-block;
     margin-top: 30px;
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
+    color: white !important; /* Chữ màu trắng như bà muốn */
+    text-decoration: none !important; /* Bỏ gạch chân xanh */
+    font-size: 1.5rem; /* Chỉnh chữ to hơn */
     letter-spacing: 2px;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.4s ease; /* Hiệu ứng mượt mà */
+    z-index: 10;
+}
+
+/* Khi rê chuột vào thì zoom to hơn */
+.scroll-down:hover {
+    transform: scale(1.2); /* Phóng to 20% */
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.arrow {
+    font-size: 1.2rem;
+    color: white;
 }
 
 .zoom-out-effect {
