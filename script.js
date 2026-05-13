@@ -66,24 +66,27 @@ document.addEventListener('click', function() {
 }, { once: true }); // "once: true" đảm bảo lệnh này chỉ chạy 1 lần duy nhất khi mở web
 
 function startEverything() {
-    // 1. Phát nhạc
+    const scrollText = document.querySelector('.scroll-down');
     const music = document.getElementById('weddingMusic');
+
+    // 1. Thêm hiệu ứng zoom cho chữ
+    scrollText.classList.add('zoom-out-effect');
+
+    // 2. Phát nhạc ngay lập tức
     if (music) {
-        music.play().catch(error => {
-            console.log("Trình duyệt chặn nhạc, cần tương tác thêm:", error);
-        });
+        music.play().catch(e => console.log("Lỗi nhạc:", e));
     }
 
-    // 2. Cuộn xuống phần nội dung bên dưới
-    // Giả sử phần tiếp theo của bà có id hoặc class là .content
-    const nextSection = document.querySelector('.full-width-photo') || document.querySelector('section:nth-of-type(2)');
-    
-    if (nextSection) {
-        nextSection.scrollIntoView({ 
-            behavior: 'smooth' // Cuộn mượt mà
-        });
-    }
-    /* Hiệu ứng phóng to và biến mất */
+    // 3. Đợi chữ phóng to xong (khoảng 0.5s) rồi mới cuộn xuống
+    setTimeout(() => {
+        const nextSection = document.querySelector('.full-width-photo') || document.querySelector('section:nth-of-type(2)');
+        if (nextSection) {
+            nextSection.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+    }, 500); 
+}
 .zoom-out-effect {
     transform: scale(3); /* Phóng to gấp 3 lần */
     opacity: 0 !important;
