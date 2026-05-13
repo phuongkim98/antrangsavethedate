@@ -83,5 +83,22 @@ function startEverything() {
             behavior: 'smooth' // Cuộn mượt mà
         });
     }
+    /* Hiệu ứng phóng to và biến mất */
+.zoom-out-effect {
+    transform: scale(3); /* Phóng to gấp 3 lần */
+    opacity: 0 !important;
+    transition: all 0.8s ease-out; /* Chạy trong 0.8 giây */
+    pointer-events: none; /* Tránh việc nhấn liên tiếp */
+}
+
+.scroll-down {
+    display: inline-block;
+    color: white; /* Chữ màu trắng như bà muốn */
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 }
 
