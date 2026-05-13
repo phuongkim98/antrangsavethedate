@@ -21,7 +21,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('5.jpg') center/cover no-repeat fixed;
+    background: url('9.jpg') center/cover no-repeat fixed;
     display: flex; align-items: center; justify-content: center;
     text-align: center; position: relative; color: white;
 }
