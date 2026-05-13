@@ -65,20 +65,23 @@ document.addEventListener('click', function() {
     }
 }, { once: true }); // "once: true" đảm bảo lệnh này chỉ chạy 1 lần duy nhất khi mở web
 
-function toggleMusic() {
-    if (music.paused) {
-        music.play();
-        musicBtn.classList.add('rotating');
-    } else {
-        music.pause();
-        musicBtn.classList.remove('rotating');
+function startEverything() {
+    // 1. Phát nhạc
+    const music = document.getElementById('weddingMusic');
+    if (music) {
+        music.play().catch(error => {
+            console.log("Trình duyệt chặn nhạc, cần tương tác thêm:", error);
+        });
+    }
+
+    // 2. Cuộn xuống phần nội dung bên dưới
+    // Giả sử phần tiếp theo của bà có id hoặc class là .content
+    const nextSection = document.querySelector('.full-width-photo') || document.querySelector('section:nth-of-type(2)');
+    
+    if (nextSection) {
+        nextSection.scrollIntoView({ 
+            behavior: 'smooth' // Cuộn mượt mà
+        });
     }
 }
 
-// Tự động phát nhạc khi người dùng tương tác lần đầu với trang web
-document.addEventListener('click', function() {
-    if (music.paused) {
-        music.play();
-        musicBtn.classList.add('rotating');
-    }
-}, { once: true }); // Chỉ chạy 1 lần duy nhất khi click lần đầu
