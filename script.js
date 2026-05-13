@@ -51,34 +51,52 @@ function startImageSlider() {
     }, 3000); // 3 giây đổi 1 lần
 }
 
-// Ngay khi vừa load trang, chặn không cho khách cuộn xuống
-document.body.classList.add('stop-scrolling');
+// 1. NGAY KHI MỞ WEB: Chặn cuộn trang luôn
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add('stop-scrolling');
+    window.scrollTo(0, 0); // Đảm bảo luôn ở đầu trang khi mở
+});
 
+// 2. HÀM KHI NHẤP VÀO CHỮ "CUỘN XUỐNG ĐỂ XEM"
 function startEverything() {
     const music = document.getElementById('weddingMusic');
     const scrollText = document.querySelector('.scroll-down');
+    const musicBtn = document.getElementById('music-control');
 
-    // 1. Phát nhạc ngay lập tức
+    // Hiệu ứng chữ zoom to và biến mất
+    if (scrollText) {
+        scrollText.classList.add('zoom-out-effect');
+    }
+
+    // Phát nhạc
     if (music) {
-        music.play();
-        const musicBtn = document.getElementById('music-control');
+        music.play().catch(e => console.log("Trình duyệt chặn autoplay:", e));
         if (musicBtn) musicBtn.classList.add('rotating');
     }
 
-    // 2. Hiệu ứng chữ zoom to rồi biến mất (tùy chọn)
-    scrollText.style.transform = "scale(5)";
-    scrollText.style.opacity = "0";
-
-    // 3. Mở khóa cuộn trang và nhảy xuống phần dưới
+    // Đợi 0.5s cho hiệu ứng đẹp rồi mới mở khóa cuộn và nhảy xuống
     setTimeout(() => {
-        document.body.classList.remove('stop-scrolling');
+        document.body.classList.remove('stop-scrolling'); // MỞ KHÓA CUỘN TRANG
         
-        // Nhảy xuống phần Thời gian & Địa điểm
+        // Tự động nhảy xuống phần sự kiện
         const nextSection = document.querySelector('.events-section');
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
         }
-    }, 400);
+    }, 600);
+}
+
+// Giữ lại hàm toggle nhạc cho nút tròn ở góc
+function toggleMusic() {
+    const music = document.getElementById('weddingMusic');
+    const musicBtn = document.getElementById('music-control');
+    if (music.paused) {
+        music.play();
+        musicBtn.classList.add('rotating');
+    } else {
+        music.pause();
+        musicBtn.classList.remove('rotating');
+    }
 }
 .zoom-out-effect {
     transform: scale(3); /* Phóng to gấp 3 lần */
