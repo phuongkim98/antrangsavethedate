@@ -54,7 +54,16 @@ function startImageSlider() {
 // Chạy hàm ngay khi load xong trang
 window.addEventListener('DOMContentLoaded', startImageSlider);
 const music = document.getElementById('weddingMusic');
-const musicBtn = document.getElementById('music-control');
+
+// Hàm này sẽ chạy ngay khi người dùng chạm/click vào bất cứ đâu trên trang web
+document.addEventListener('click', function() {
+    if (music.paused) {
+        music.play();
+        // Thêm hiệu ứng cho nút nhạc nếu bà có làm nút
+        const musicBtn = document.getElementById('music-control');
+        if(musicBtn) musicBtn.classList.add('rotating');
+    }
+}, { once: true }); // "once: true" đảm bảo lệnh này chỉ chạy 1 lần duy nhất khi mở web
 
 function toggleMusic() {
     if (music.paused) {
