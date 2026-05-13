@@ -53,3 +53,23 @@ function startImageSlider() {
 
 // Chạy hàm ngay khi load xong trang
 window.addEventListener('DOMContentLoaded', startImageSlider);
+const music = document.getElementById('weddingMusic');
+const musicBtn = document.getElementById('music-control');
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicBtn.classList.add('rotating');
+    } else {
+        music.pause();
+        musicBtn.classList.remove('rotating');
+    }
+}
+
+// Tự động phát nhạc khi người dùng tương tác lần đầu với trang web
+document.addEventListener('click', function() {
+    if (music.paused) {
+        music.play();
+        musicBtn.classList.add('rotating');
+    }
+}, { once: true }); // Chỉ chạy 1 lần duy nhất khi click lần đầu
