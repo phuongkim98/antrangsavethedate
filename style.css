@@ -119,8 +119,20 @@ body {
 .footer { padding: 80px 0; text-align: center; background: var(--light); font-weight: 200; letter-spacing: 4px; font-size: 0.9rem; color: #999; }
 
 /* Responsive */
-@media (max-width: 992px) {
-    .story-item, .story-item.reverse { flex-direction: column; gap: 40px; margin-bottom: 100px; }
-    .couple-name { font-size: 4rem; }
-    .event-box { width: 100%; }
+/* --- Dán vào dòng cuối cùng của file style.css --- */
+
+@media (max-width: 768px) {
+    /* Sửa lỗi chữ Thu Trang bị nhảy dòng */
+    .hero-section h1 { 
+        font-size: 1.6rem !important; /* Thêm !important để chắc chắn nó ghi đè được code cũ */
+        white-space: nowrap !important; 
+        display: inline-block;
+    }
+
+    /* Sửa lỗi ảnh nền bị phóng to/mất ảnh */
+    .header-section { 
+        background-attachment: scroll !important; /* Rất quan trọng để hiện đủ ảnh trên điện thoại */
+        background-size: cover !important;
+        background-position: center center !important;
+    }
 }
