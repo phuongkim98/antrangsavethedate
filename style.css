@@ -164,4 +164,33 @@ body {
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
+    .scroll-down {
+    display: block;
+    margin-top: 30px;
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-serif); /* Hoặc font bà đang dùng */
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll-down:hover {
+    opacity: 1;
+    transform: translateY(5px); /* Hiệu ứng nhún nhảy nhẹ */
+}
+
+.arrow {
+    display: inline-block;
+    margin-top: 10px;
+    animation: bounce 2s infinite; /* Làm mũi tên nhảy lên xuống */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
 }
