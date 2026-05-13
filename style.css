@@ -135,4 +135,33 @@ body {
         background-size: cover !important;
         background-position: center center !important;
     }
+#music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#music-icon {
+    font-size: 20px;
+}
+
+/* Hiệu ứng xoay khi đang phát nhạc */
+.rotating {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
 }
