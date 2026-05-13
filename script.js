@@ -51,41 +51,34 @@ function startImageSlider() {
     }, 3000); // 3 giây đổi 1 lần
 }
 
-// Chạy hàm ngay khi load xong trang
-window.addEventListener('DOMContentLoaded', startImageSlider);
-const music = document.getElementById('weddingMusic');
-
-// Hàm này sẽ chạy ngay khi người dùng chạm/click vào bất cứ đâu trên trang web
-document.addEventListener('click', function() {
-    if (music.paused) {
-        music.play();
-        // Thêm hiệu ứng cho nút nhạc nếu bà có làm nút
-        const musicBtn = document.getElementById('music-control');
-        if(musicBtn) musicBtn.classList.add('rotating');
-    }
-}, { once: true }); // "once: true" đảm bảo lệnh này chỉ chạy 1 lần duy nhất khi mở web
+// Ngay khi vừa load trang, chặn không cho khách cuộn xuống
+document.body.classList.add('stop-scrolling');
 
 function startEverything() {
-    const scrollText = document.querySelector('.scroll-down');
     const music = document.getElementById('weddingMusic');
+    const scrollText = document.querySelector('.scroll-down');
 
-    // 1. Thêm hiệu ứng zoom cho chữ
-    scrollText.classList.add('zoom-out-effect');
-
-    // 2. Phát nhạc ngay lập tức
+    // 1. Phát nhạc ngay lập tức
     if (music) {
-        music.play().catch(e => console.log("Lỗi nhạc:", e));
+        music.play();
+        const musicBtn = document.getElementById('music-control');
+        if (musicBtn) musicBtn.classList.add('rotating');
     }
 
-    // 3. Đợi chữ phóng to xong (khoảng 0.5s) rồi mới cuộn xuống
+    // 2. Hiệu ứng chữ zoom to rồi biến mất (tùy chọn)
+    scrollText.style.transform = "scale(5)";
+    scrollText.style.opacity = "0";
+
+    // 3. Mở khóa cuộn trang và nhảy xuống phần dưới
     setTimeout(() => {
-        const nextSection = document.querySelector('.full-width-photo') || document.querySelector('section:nth-of-type(2)');
+        document.body.classList.remove('stop-scrolling');
+        
+        // Nhảy xuống phần Thời gian & Địa điểm
+        const nextSection = document.querySelector('.events-section');
         if (nextSection) {
-            nextSection.scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+            nextSection.scrollIntoView({ behavior: 'smooth' });
         }
-    }, 500); 
+    }, 400);
 }
 .zoom-out-effect {
     transform: scale(3); /* Phóng to gấp 3 lần */
