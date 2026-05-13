@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation | Minimalist Edition</title>
+    <title>Wedding Invitation | Thành An & Thu Trang</title>
     <!-- Hiệu ứng cuộn AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <!-- Font chữ sang trọng -->
@@ -11,16 +11,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Nhạc nền -->
-<audio id="weddingMusic" loop>
-    <source src="nhac-dam-cuoi.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ phát nhạc.
-</audio>
 
-<!-- Nút điều khiển nhạc -->
-<div id="music-control" onclick="toggleMusic()">
-    <span id="music-icon">🎵</span>
-</div>
+    <!-- NHẠC NỀN (Chỉ để 1 thẻ duy nhất ở đây) -->
+    <audio id="weddingMusic" loop>
+        <source src="nhac-dam-cuoi.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát nhạc.
+    </audio>
+
+    <!-- NÚT ĐIỀU KHIỂN NHẠC -->
+    <div id="music-control" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+    </div>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -29,16 +30,12 @@
             <p class="top-text">SAVE THE DATE</p>
             <h1 class="couple-name">Thành An * Thu Trang</h1>
             <p class="date-text">31 — 05 — 2026</p>
-            <!-- Dòng chữ cuộn xuống mới -->
-    <a href="javascript:void(0)" class="scroll-down" onclick="startEverything()" style="color: white;">
-    Cuộn xuống để xem <br>
-    <span class="arrow">↓</span>
-</a>
-
-<!-- Đảm bảo thẻ audio đã có sẵn -->
-<audio id="weddingMusic" loop>
-    <source src="nhac-cua-ba.mp3" type="audio/mpeg">
-</audio>
+            
+            <!-- Dòng chữ cuộn xuống - Đã chỉnh màu trắng -->
+            <a href="javascript:void(0)" class="scroll-down" onclick="startEverything()">
+                Cuộn xuống để xem <br>
+                <span class="arrow">↓</span>
+            </a>
         </div>
     </section>
 
@@ -58,13 +55,13 @@
                 <div class="event-box" data-aos="fade-up" data-aos-delay="100">
                     <h3>Lễ Vu Quy</h3>
                     <p>12:30 CH | 31.05.2026</p>
-                    <p class="loc">Thôn Khuốc Tây - Đông Tiên Hưng  Hưng Yên</p>
+                    <p class="loc">Thôn Khuốc Tây - Đông Tiên Hưng - Hưng Yên</p>
                     <a href="https://maps.google.com" target="_blank" class="btn-link">View Map</a>
                 </div>
                 <div class="event-box" data-aos="fade-up" data-aos-delay="200">
                     <h3>Tiệc Cưới</h3>
                     <p>12:30 CH | 31.05.2026</p>
-                    <p class="loc">Thôn Khuốc Tây - Đông Tiên Hưng  Hưng Yên</p>
+                    <p class="loc">Thôn Khuốc Tây - Đông Tiên Hưng - Hưng Yên</p>
                     <a href="https://maps.google.com" target="_blank" class="btn-link">View Map</a>
                 </div>
             </div>
@@ -92,25 +89,22 @@
                 </div>
                 <div class="story-text">
                     <h3>Cùng nhau đi qua năm tháng</h3>
-                    <p>Có những ngày bình yên, cũng có những ngày giông bão. Nhưng quan trọng nhất là tay vẫn nắm chặt tay, cùng nhau viết nên những trang ký ức đẹp nhất. Vì vậy, điều ý nghĩa nhất với mình chính là lời chấp nhận từ người ấy.</p>
+                    <p>Có những ngày bình yên, cũng có những ngày giông bão. Nhưng quan trọng nhất là tay vẫn nắm chặt tay, cùng nhau viết nên những trang ký ức đẹp nhất.</p>
                 </div>
             </div>
 
-            <!-- Slider ảnh kỷ niệm có chữ đè lên -->
-    <div class="full-width-photo" data-aos="zoom-in">
-        <div class="slider-container">
-            <!-- Bà có thể thêm bao nhiêu ảnh tùy thích vào đây -->
-            <div class="slide active"><img src="1.jpg" alt="Photo 1"></div>
-            <div class="slide"><img src="6.jpg" alt="Photo 6"></div>
-            <div class="slide"><img src="7.jpg" alt="Photo 7"></div>
-            <div class="slide"><img src="8.jpg" alt="Photo 8"></div>
-        </div>
-        
-        <!-- Chữ đè lên ảnh - Luôn sắc nét -->
-        <div class="photo-caption">
-            <p>VÀ CUỐI CÙNG CHÚNG MÌNH ĐÃ NÓI "LỜI ĐỒNG Ý"...</p>
-        </div>
-    </div>
+            <!-- Slider ảnh kỷ niệm -->
+            <div class="full-width-photo" data-aos="zoom-in">
+                <div class="slider-container">
+                    <div class="slide active"><img src="1.jpg" alt="Photo 1"></div>
+                    <div class="slide"><img src="6.jpg" alt="Photo 6"></div>
+                    <div class="slide"><img src="7.jpg" alt="Photo 7"></div>
+                    <div class="slide"><img src="8.jpg" alt="Photo 8"></div>
+                </div>
+                <div class="photo-caption">
+                    <p>VÀ CUỐI CÙNG CHÚNG MÌNH ĐÃ NÓI "LỜI ĐỒNG Ý"...</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -118,7 +112,11 @@
         <p>31.05.2026 — Rất hân hạnh đón tiếp!</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init(); // Khởi tạo AOS tại đây luôn cho chắc
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
