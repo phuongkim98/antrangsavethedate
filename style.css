@@ -161,22 +161,6 @@ body {
     animation: spin 3s linear infinite;
 }
 
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-    .scroll-down {
-    display: block;
-    margin-top: 30px;
-    color: white;
-    text-decoration: none;
-    font-family: var(--font-serif); /* Hoặc font bà đang dùng */
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    opacity: 0.8;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
 .scroll-down:hover {
     opacity: 1;
     transform: translateY(5px); /* Hiệu ứng nhún nhảy nhẹ */
