@@ -35,43 +35,39 @@ body {
 
 /* Dòng chữ cuộn xuống */
 /* Chặn cuộn trang khi chưa nhấn nút (để nhạc phải phát) */
+/* ... Giữ nguyên phần :root và body ban đầu của bà ... */
+
+/* [QUAN TRỌNG] Chặn cuộn trang */
 body.stop-scrolling {
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden !important; /* Buộc phải dừng cuộn */
 }
 
+/* Phần chữ Cuộn xuống để xem */
 .scroll-down {
     display: inline-block;
     margin-top: 30px;
-    color: white !important; /* Chữ màu trắng như bà muốn */
-    text-decoration: none !important; /* Bỏ gạch chân xanh */
-    font-size: 1.5rem; /* Chỉnh chữ to hơn */
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 1.5rem;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: all 0.4s ease; /* Hiệu ứng mượt mà */
+    transition: all 0.4s ease-in-out; /* Hiệu ứng mượt */
     z-index: 10;
+    position: relative;
 }
 
-/* Khi rê chuột vào thì zoom to hơn */
+/* HIỆU ỨNG RÊ CHUỘT (HOVER) */
 .scroll-down:hover {
     transform: scale(1.2); /* Phóng to 20% */
-    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Tỏa sáng trắng */
+    letter-spacing: 4px; /* Chữ dãn ra một chút cho sang */
 }
 
 .arrow {
-    font-size: 1.2rem;
-    color: white;
-}
-
-.zoom-out-effect {
-    transform: scale(3);
-    opacity: 0 !important;
-    pointer-events: none;
-}
-
-.arrow {
-    display: inline-block;
+    display: block;
     margin-top: 10px;
+    font-size: 1.2rem;
     animation: bounce 2s infinite;
 }
 
@@ -80,6 +76,16 @@ body.stop-scrolling {
     40% {transform: translateY(-10px);}
     60% {transform: translateY(-5px);}
 }
+
+/* Hiệu ứng Zoom biến mất khi nhấn */
+.zoom-out-effect {
+    transform: scale(5) !important;
+    opacity: 0 !important;
+    transition: all 0.8s ease-in !important;
+    pointer-events: none;
+}
+
+/* ... Giữ các phần còn lại của bà ... */
 
 /* Nút nhạc */
 #music-control {
