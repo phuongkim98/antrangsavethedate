@@ -126,13 +126,22 @@ body {
 }
 
 .photo-caption p {
-    font-family: var(--font-serif);
-    font-size: 2.5rem;
+
+    font-family: 'Parisienne', cursive;
+
+    font-size: 4.5rem;
+
     color: white;
-    letter-spacing: 5px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.7); /* Đổ bóng để chữ cực rõ */
+
+    letter-spacing: 2px;
+
+    text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+
     margin: 0;
-    font-weight: 300;
+
+    font-weight: 400;
+
+    line-height: 1.5;
 }
 .footer { padding: 80px 0; text-align: center; background: var(--light); font-weight: 200; letter-spacing: 4px; font-size: 0.9rem; color: #999; }
 
