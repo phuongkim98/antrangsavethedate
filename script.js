@@ -183,3 +183,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+// =========================
+// RSVP KHÔNG NHẢY TRANG
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const rsvpForm = document.getElementById("rsvpForm");
+
+    if(rsvpForm){
+
+        rsvpForm.addEventListener("submit", async (e) => {
+
+            e.preventDefault();
+
+            const formData = new FormData(rsvpForm);
+
+            try {
+
+                const response = await fetch(
+                    "https://formspree.io/f/xjgldjak",
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }
+                );
+
+                if(response.ok){
+
+                    alert("✨ Cảm ơn bạn đã phản hồi!");
+
+                    rsvpForm.reset();
+
+                } else {
+
+                    alert("Có lỗi xảy ra!");
+
+                }
+
+            } catch(error){
+
+                alert("Không gửi được!");
+
+            }
+
+        });
+
+    }
+
+});
