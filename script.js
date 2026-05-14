@@ -94,3 +94,40 @@ if (wishForm){
     });
 
 }
+// =========================
+// MUSIC CONTROL
+// =========================
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+// Tự phát nhạc khi user click lần đầu
+window.addEventListener("click", () => {
+
+    if(bgMusic.paused){
+
+        bgMusic.play();
+
+        musicBtn.classList.remove("paused");
+    }
+
+}, { once:true });
+
+
+// Bật / tắt nhạc
+musicBtn.addEventListener("click", () => {
+
+    if(bgMusic.paused){
+
+        bgMusic.play();
+
+        musicBtn.classList.remove("paused");
+
+    } else {
+
+        bgMusic.pause();
+
+        musicBtn.classList.add("paused");
+    }
+
+});
