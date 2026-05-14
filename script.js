@@ -131,3 +131,51 @@ musicBtn.addEventListener("click", () => {
     }
 
 });
+// =========================
+// GỬI FORM KHÔNG NHẢY TRANG
+// =========================
+
+const wishForm = document.getElementById("wishForm");
+
+if(wishForm){
+
+    wishForm.addEventListener("submit", async function(e){
+
+        // CHẶN NHẢY TRANG
+        e.preventDefault();
+
+        const formData = new FormData(wishForm);
+
+        try{
+
+            const response = await fetch(wishForm.action, {
+
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+
+            });
+
+            if(response.ok){
+
+                alert("💌 Gửi lời chúc thành công!");
+
+                wishForm.reset();
+
+            }else{
+
+                alert("Có lỗi xảy ra!");
+
+            }
+
+        }catch(error){
+
+            alert("Không thể gửi lúc này!");
+
+        }
+
+    });
+
+}
