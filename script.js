@@ -1,107 +1,107 @@
-// Khởi tạo AOS với cấu hình mượt mà
+// Khởi tạo AOS
 AOS.init({ 
     duration: 1500, 
     once: true,
     easing: 'ease-out-quart'
 });
 
-// Ngày cưới dự kiến: 15/05/2026
+
+// =========================
+// COUNTDOWN
+// =========================
+
 const weddingDate = new Date("May 31, 2026 12:30:00").getTime();
 
 function updateCountdown() {
+
     const now = new Date().getTime();
     const gap = weddingDate - now;
 
-    const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
 
     if (gap > 0) {
-        document.getElementById("days").innerText = Math.floor(gap / day);
-        document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
-        document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
-        document.getElementById("seconds").innerText = Math.floor((gap % minute) / second);
+
+        document.getElementById("days").innerText =
+            Math.floor(gap / day);
+
+        document.getElementById("hours").innerText =
+            Math.floor((gap % day) / hour);
+
+        document.getElementById("minutes").innerText =
+            Math.floor((gap % hour) / minute);
+
+        document.getElementById("seconds").innerText =
+            Math.floor((gap % minute) / second);
+
     } else {
-        document.getElementById("countdown").innerHTML = "<h3 style='font-family: var(--font-serif); font-size: 2rem;'>The Celebration has Begun!</h3>";
+
+        document.getElementById("countdown").innerHTML =
+            "<h3>The Celebration has Begun!</h3>";
     }
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Hiệu ứng Parallax cho ảnh nền Hero khi cuộn
+
+// =========================
+// PARALLAX HERO
+// =========================
+
 window.addEventListener('scroll', () => {
+
     const scrollPos = window.pageYOffset;
+
     const hero = document.querySelector('.hero');
-    hero.style.backgroundPositionY = (scrollPos * 0.4) + 'px';
+
+    hero.style.backgroundPositionY =
+        (scrollPos * 0.4) + 'px';
 });
+
+
+// =========================
+// IMAGE SLIDER
+// =========================
+
 function startImageSlider() {
+
     const slides = document.querySelectorAll('.slide');
+
     if (slides.length === 0) return;
 
     let currentIndex = 0;
 
     setInterval(() => {
-        // Gỡ bỏ trạng thái hiện tại
+
         slides[currentIndex].classList.remove('active');
-        
-        // Tính toán ảnh tiếp theo
-        currentIndex = (currentIndex + 1) % slides.length;
-        
-        // Hiển thị ảnh mới
+
+        currentIndex =
+            (currentIndex + 1) % slides.length;
+
         slides[currentIndex].classList.add('active');
-    }, 2500); // 2.5 giây đổi 1 lần
+
+    }, 2500);
 }
 
-// Chạy hàm ngay khi load xong trang
-window.addEventListener('DOMContentLoaded', startImageSlider);
-const wishForm = document.getElementById("wishForm");
+window.addEventListener(
+    'DOMContentLoaded',
+    startImageSlider
+);
 
-if (wishForm){
 
-    wishForm.addEventListener("submit", async function(e){
-
-        e.preventDefault();
-
-        const formData = new FormData(wishForm);
-
-        try {
-
-            const response = await fetch(wishForm.action, {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if(response.ok){
-
-                alert("💌 Gửi lời chúc thành công!");
-
-                wishForm.reset();
-
-            } else {
-
-                alert("Có lỗi xảy ra!");
-
-            }
-
-        } catch(error){
-
-            alert("Không thể gửi. Thử lại nhé!");
-
-        }
-
-    });
-
-}
 // =========================
 // MUSIC CONTROL
 // =========================
 
-const bgMusic = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
+const bgMusic =
+    document.getElementById("bgMusic");
 
-// Tự phát nhạc khi user click lần đầu
+const musicBtn =
+    document.getElementById("musicBtn");
+
 window.addEventListener("click", () => {
 
     if(bgMusic.paused){
@@ -114,7 +114,6 @@ window.addEventListener("click", () => {
 }, { once:true });
 
 
-// Bật / tắt nhạc
 musicBtn.addEventListener("click", () => {
 
     if(bgMusic.paused){
@@ -129,109 +128,112 @@ musicBtn.addEventListener("click", () => {
 
         musicBtn.classList.add("paused");
     }
-
 });
+
+
 // =========================
 // FORM KHÔNG NHẢY TRANG
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const wishForm = document.getElementById("wishForm");
+    // FORM LỜI CHÚC
+    const wishForm =
+        document.getElementById("wishForm");
 
     if(wishForm){
 
-        wishForm.addEventListener("submit", async (e) => {
+        wishForm.addEventListener(
+            "submit",
+            async (e) => {
 
             e.preventDefault();
 
-            const formData = new FormData(wishForm);
+            const formData =
+                new FormData(wishForm);
 
             try {
 
-                const response = await fetch(
-                    "https://formspree.io/f/xjgldjak",
+                const response =
+                    await fetch(
+                    wishForm.action,
                     {
                         method: "POST",
                         body: formData,
                         headers: {
                             'Accept': 'application/json'
                         }
-                    }
-                );
+                    });
 
                 if(response.ok){
 
-                    alert("💌 Gửi lời chúc thành công!");
+                    alert(
+                        "💌 Gửi lời chúc thành công!"
+                    );
 
                     wishForm.reset();
 
                 } else {
 
                     alert("Có lỗi xảy ra!");
-
                 }
 
             } catch(error){
 
                 alert("Không gửi được!");
-
             }
 
         });
-
     }
 
-});
-// =========================
-// RSVP KHÔNG NHẢY TRANG
-// =========================
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const rsvpForm = document.getElementById("rsvpForm");
+    // FORM RSVP
+    const rsvpForm =
+        document.getElementById("rsvpForm");
 
     if(rsvpForm){
 
-        rsvpForm.addEventListener("submit", async (e) => {
+        rsvpForm.addEventListener(
+            "submit",
+            async (e) => {
 
             e.preventDefault();
 
-            const formData = new FormData(rsvpForm);
+            const formData =
+                new FormData(rsvpForm);
 
             try {
 
-                const response = await fetch(
-                    "https://formspree.io/f/xjgldjak",
+                const response =
+                    await fetch(
+                    rsvpForm.action,
                     {
                         method: "POST",
                         body: formData,
                         headers: {
                             'Accept': 'application/json'
                         }
-                    }
-                );
+                    });
 
                 if(response.ok){
 
-                    alert("✨ Cảm ơn bạn đã phản hồi!");
+                    alert(
+                        "✨ Cảm ơn bạn đã phản hồi!"
+                    );
 
                     rsvpForm.reset();
 
                 } else {
 
                     alert("Có lỗi xảy ra!");
-
                 }
 
             } catch(error){
 
                 alert("Không gửi được!");
-
             }
 
         });
-
     }
 
 });
