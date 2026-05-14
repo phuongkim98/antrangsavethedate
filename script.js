@@ -132,50 +132,54 @@ musicBtn.addEventListener("click", () => {
 
 });
 // =========================
-// GỬI FORM KHÔNG NHẢY TRANG
+// FORM KHÔNG NHẢY TRANG
 // =========================
 
-const wishForm = document.getElementById("wishForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-if(wishForm){
+    const wishForm = document.getElementById("wishForm");
 
-    wishForm.addEventListener("submit", async function(e){
+    if(wishForm){
 
-        // CHẶN NHẢY TRANG
-        e.preventDefault();
+        wishForm.addEventListener("submit", async (e) => {
 
-        const formData = new FormData(wishForm);
+            e.preventDefault();
 
-        try{
+            const formData = new FormData(wishForm);
 
-            const response = await fetch(wishForm.action, {
+            try {
 
-                method: "POST",
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
+                const response = await fetch(
+                    "https://formspree.io/f/xjgldjak",
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }
+                );
+
+                if(response.ok){
+
+                    alert("💌 Gửi lời chúc thành công!");
+
+                    wishForm.reset();
+
+                } else {
+
+                    alert("Có lỗi xảy ra!");
+
                 }
 
-            });
+            } catch(error){
 
-            if(response.ok){
-
-                alert("💌 Gửi lời chúc thành công!");
-
-                wishForm.reset();
-
-            }else{
-
-                alert("Có lỗi xảy ra!");
+                alert("Không gửi được!");
 
             }
 
-        }catch(error){
+        });
 
-            alert("Không thể gửi lúc này!");
+    }
 
-        }
-
-    });
-
-}
+});
