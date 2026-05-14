@@ -127,21 +127,21 @@ body {
 
 .photo-caption p {
 
-    font-family: 'Parisienne', cursive;
+    font-family: 'Great Vibes', cursive !important;
 
-    font-size: 4.5rem;
+    font-size: 5.5rem;
 
     color: white;
-
-    letter-spacing: 2px;
 
     text-shadow: 0 4px 20px rgba(0,0,0,0.7);
 
     margin: 0;
 
-    font-weight: 400;
+    font-weight: normal;
 
     line-height: 1.5;
+
+    letter-spacing: 1px;
 }
 .footer { padding: 80px 0; text-align: center; background: var(--light); font-weight: 200; letter-spacing: 4px; font-size: 0.9rem; color: #999; }
 
