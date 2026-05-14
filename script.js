@@ -1,75 +1,41 @@
-// 1. Khởi tạo AOS với cấu hình mượt mà
-AOS.init({ 
-    duration: 1500, 
-    once: true,
-    easing: 'ease-out-quart'
-});
+AOS.init({ duration: 1500, once: true });
 
-// 2. Countdown - Ngày cưới: 31/05/2026
+// Nhạc nền
+const audio = document.getElementById('bgMusic');
+const icon = document.getElementById('music-icon');
+
+function toggleMusic() {
+    if (audio.paused) { audio.play(); icon.innerText = "⏸️"; }
+    else { audio.pause(); icon.innerText = "🎵"; }
+}
+
+// Countdown 31/05/2026
 const weddingDate = new Date("May 31, 2026 12:30:00").getTime();
-
-function updateCountdown() {
+setInterval(() => {
     const now = new Date().getTime();
     const gap = weddingDate - now;
-
-    const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-
-    // Kiểm tra xem các phần tử có tồn tại không trước khi gán giá trị để tránh lỗi dừng script
-    const daysEl = document.getElementById("days");
-    if (!daysEl) return; 
-
+    const d = 1000 * 60 * 60 * 24;
+    const h = d / 24, m = h / 60, s = m / 60;
     if (gap > 0) {
-        daysEl.innerText = Math.floor(gap / day);
-        document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
-        document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
-        document.getElementById("seconds").innerText = Math.floor((gap % minute) / second);
-    } else {
-        document.getElementById("countdown").innerHTML = "<h3 style='font-family: var(--font-serif); font-size: 2rem;'>The Celebration has Begun!</h3>";
+        document.getElementById("days").innerText = Math.floor(gap / d);
+        document.getElementById("hours").innerText = Math.floor((gap % d) / h);
+        document.getElementById("minutes").innerText = Math.floor((gap % h) / m);
+        document.getElementById("seconds").innerText = Math.floor((gap % m) / s);
     }
-}
+}, 1000);
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// 3. Hiệu ứng Parallax - CHỈ CHẠY TRÊN MÁY TÍNH (Để tránh lỗi đứng yên trên điện thoại)
-window.addEventListener('scroll', () => {
-    if (window.innerWidth > 768) { // Chỉ chạy nếu màn hình rộng hơn 768px
-        const scrollPos = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.backgroundPositionY = (scrollPos * 0.4) + 'px';
-        }
-    }
-});
-
-// 4. Slider ảnh kỷ niệm
-function startImageSlider() {
-    const slides = document.querySelectorAll('.slide');
-    if (slides.length === 0) return;
-
-    let currentIndex = 0;
-
+// Slider
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+if (slides.length > 0) {
     setInterval(() => {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
-    }, 3000); // 3 giây đổi 1 lần cho đỡ bị nhanh quá
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 3000);
 }
 
-// Chạy các hàm khi trang đã tải xong
-window.addEventListener('DOMContentLoaded', () => {
-    startImageSlider();
-    
-    // Xử lý cuộn mượt cho các link # (Sửa lỗi nhấn vào đứng yên)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+// Tự động phát nhạc khi cuộn lần đầu
+window.addEventListener('scroll', () => {
+    if (audio.paused) audio.play().then(() => icon.innerText = "⏸️").catch(() => {});
+}, { once: true });
