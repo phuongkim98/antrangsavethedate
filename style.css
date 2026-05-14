@@ -311,3 +311,129 @@ body {
         transform:rotate(360deg);
     }
 }
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+    .container{
+        padding:0 20px;
+    }
+
+    /* HERO */
+
+    .hero{
+        background-attachment:scroll;
+    }
+
+    .couple-name{
+        font-size:3rem;
+        line-height:1.3;
+    }
+
+    .date-text{
+        font-size:1rem;
+        letter-spacing:2px;
+    }
+
+    /* SECTION TITLE */
+
+    .section-title{
+        font-size:2.3rem;
+        margin-bottom:40px;
+    }
+
+    /* COUNTDOWN */
+
+    #countdown{
+        gap:18px;
+        flex-wrap:wrap;
+        margin-bottom:60px;
+    }
+
+    .time-item span{
+        font-size:2rem;
+    }
+
+    /* EVENT */
+
+    .event-box{
+        width:100%;
+        padding:40px 25px;
+    }
+
+    .event-box h3{
+        font-size:1.8rem;
+    }
+
+    /* STORY */
+
+    .story-item,
+    .story-item.reverse{
+        flex-direction:column;
+        gap:30px;
+        margin-bottom:80px;
+    }
+
+    .story-img{
+        width:100%;
+    }
+
+    .story-img img{
+        height:420px;
+    }
+
+    .story-text h3{
+        font-size:2rem;
+        text-align:center;
+    }
+
+    .story-text p{
+        font-size:1rem;
+        line-height:1.8;
+        text-align:center;
+    }
+
+    /* SLIDER */
+
+    .full-width-photo{
+        height:500px;
+    }
+
+    .photo-caption p{
+
+        font-size:2.8rem;
+
+        line-height:1.4;
+
+        padding:0 10px;
+    }
+
+    /* WISH BOX */
+
+    .wish-box{
+        padding:30px 20px;
+    }
+
+    .wish-box h3{
+        font-size:2rem;
+    }
+
+    .rsvp-buttons{
+        flex-direction:column;
+    }
+
+    .rsvp-buttons button{
+        width:100%;
+    }
+
+    /* FOOTER */
+
+    .footer{
+        padding:50px 20px;
+        font-size:0.75rem;
+        letter-spacing:2px;
+    }
+
+}
