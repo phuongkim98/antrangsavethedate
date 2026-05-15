@@ -35,6 +35,56 @@ body {
 /* Section Titles */
 .section-title { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; text-align: center; margin-bottom: 60px; color: var(--dark); }
 
+/* =========================
+   INVITATION TEXT
+========================= */
+
+.invite-text{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.invite-top{
+
+    letter-spacing:6px;
+
+    font-size:0.9rem;
+
+    color:#b8926a;
+
+    margin-bottom:15px;
+}
+
+.invite-text h3{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:3.2rem;
+
+    font-weight:300;
+
+    margin:0 0 20px;
+
+    color:#1a1a1a;
+
+    font-style:italic;
+}
+
+.invite-desc{
+
+    max-width:650px;
+
+    margin:0 auto;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    color:#777;
+
+    font-style:italic;
+}
+
 /* Events Section */
 .events-section { padding: 120px 0; background: var(--light); text-align: center; }
 #countdown { display: flex; justify-content: center; gap: 50px; margin-bottom: 90px; }
@@ -436,4 +486,11 @@ body {
         letter-spacing:2px;
     }
 
+}
+.invite-text h3{
+    font-size:2.2rem;
+}
+
+.invite-desc{
+    font-size:0.95rem;
 }
