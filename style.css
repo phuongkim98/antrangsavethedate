@@ -89,6 +89,7 @@ body {
 
 .invite-top{
     font-family:'Cormorant Garamond', serif;
+    font-style:italic;
     letter-spacing:6px;
     font-size:2rem;
     color:#b8926a;
