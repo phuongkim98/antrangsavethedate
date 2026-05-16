@@ -33,7 +33,7 @@ body {
 .date-text { font-size: 1.3rem; margin-top: 25px; letter-spacing: 4px; font-weight: 200; }
 
 /* Section Titles */
-.section-title { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; text-align: center; margin-bottom: 60px; color: var(--dark); white-space: nowrap;}
+.section-title { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; text-align: center; margin-bottom: 60px; color: var(--dark);}
 
 /* =========================
    INVITATION TEXT
