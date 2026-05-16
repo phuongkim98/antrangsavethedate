@@ -301,68 +301,25 @@ body {
 ========================= */
 
 .photo-caption{
-
-    position:static;
-
-    width:100%;
-
-    max-width:850px;
-
-    margin:55px auto 0;
-
-    padding:0 20px;
-
     text-align:center;
-
-    z-index:auto;
-
-    pointer-events:auto;
+    max-width:850px;
+    margin:50px auto 0;
+    padding:0 20px;
 }
-
-/* MAIN TITLE */
 
 .photo-caption p{
-
-    font-family:'Great Vibes', cursive !important;
-
-    font-size:clamp(42px, 6vw, 88px);
-
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
     color:#b8926a;
-
-    margin:0;
-
-    line-height:1.25;
-
-    font-weight:400;
-
-    letter-spacing:1px;
-
-    text-shadow:none;
+    margin-bottom:20px;
 }
 
-/* LOVE QUOTE */
-
 .love-quote{
-
     display:block;
-
-    width:min(90%,700px);
-
-    margin:28px auto 0;
-
-    font-size:clamp(16px,2vw,26px);
-
-    line-height:1.9;
-
     color:#777;
-
+    font-size:1.1rem;
+    line-height:1.9;
     font-style:italic;
-
-    font-weight:400;
-
-    letter-spacing:0.3px;
-
-    text-shadow:none;
 }
 
 /* =========================
