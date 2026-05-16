@@ -494,3 +494,37 @@ body {
 .invite-desc{
     font-size:0.95rem;
 }
+/* =========================
+   STORY SLIDER
+========================= */
+
+.story-slider{
+    position:relative;
+    height:550px;
+}
+
+.story-slide{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:opacity 1.5s ease;
+}
+
+.story-slide.active{
+    opacity:1;
+}
+
+.story-slide img{
+
+    width:100%;
+
+    height:550px;
+
+    object-fit:cover;
+
+    border-radius:55% 45% 40% 60% / 45% 55% 45% 55%;
+}
