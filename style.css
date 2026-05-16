@@ -33,7 +33,7 @@ body {
 .date-text { font-size: 1.3rem; margin-top: 25px; letter-spacing: 4px; font-weight: 200; }
 
 /* Section Titles */
-.section-title { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; text-align: center; margin-bottom: 60px; color: var(--dark); }
+.section-title { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; text-align: center; margin-bottom: 60px; color: var(--dark); white-space: nowrap;}
 
 /* =========================
    INVITATION TEXT
@@ -124,7 +124,9 @@ body {
 }
 .story-item:hover img { transform: scale(1.08); }
 .story-text { flex: 1; }
-.story-text h3 { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 300; margin-bottom: 25px; color: var(--gold); }
+.story-text h3 { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 300; margin-bottom: 25px; color: var(--gold); white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;}
 .story-text p { font-size: 1.15rem; font-weight: 200; line-height: 2; color: #555; font-style: italic; }
 
 .full-width-photo {
